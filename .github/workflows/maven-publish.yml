@@ -1,0 +1,62 @@
+# This workflow will build a package using Maven and then publish it to GitHub packages when a release is created
+# For more information see: https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#apache-maven-with-a-settings-path
+
+# name of the workflow as appears in "Actions" tab
+name: EMA CICD
+# specifies the trigger for workflow
+on:
+  # event that triggers workflow run
+  push:
+    # specified branch associated with push
+    branches:
+      - main
+# groups together jobs that run in workflow
+jobs:
+  # defines job named TEST
+  test:
+    # name of the job
+    name: Build and Test
+    # configures job to run on latest version of ubuntu linux virtual machine
+    runs-on: ubuntu-latest
+    # groups together all steps that run in test job
+    steps:
+      # specifes that this step will run v4 of actions/checkout action
+      # checks out repository onto runner
+    - uses: actions/checkout@v2
+      # name of step
+    - name: Set up JDK 17
+      # uses actions/setup-java@v4 to install specified version of java
+      uses: actions/setup-java@v2
+      with:
+        # specified version of java
+        java-version: '17.0.*'
+        # specified distribution version of java
+        distribution: 'temurin'
+        # setup caching for dependencies managed through maven
+        cache: maven
+      # name of step
+    - name: test with Maven
+      # run maven phases up to test phase (validate, compile..)
+      run: mvn test
+  # defines job named "deploy"
+  deploy:
+    # job name
+    name: Deploy to Heroku
+    # configures job to run on latest version of ubuntu linux virtual machine
+    runs-on: ubuntu-latest
+    # requires successful completion of TEST job
+    needs: test
+    # groups together all steps that run in DEPLOY job
+    steps:
+      # uses actions/checkout@v2 to check out repo for workflow access
+      - uses: actions/checkout@v2
+        # action used for deploying app to heroku
+      - uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          # heroku api key
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          # heroku app name
+          heroku_app_name: "practice-log"
+          # heroku email
+          heroku_email: "ianperfitt@gmail.com"
+          
