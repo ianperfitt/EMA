@@ -5,11 +5,10 @@ import { Employee } from './employee';
 import { environment } from '../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class EmployeeService {
-
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
   getEmployeesList(): Observable<Employee[]> {
     return this.httpClient.get<Employee[]>(`${environment.apiURL}`);
@@ -23,11 +22,14 @@ export class EmployeeService {
     return this.httpClient.get<Employee>(`${environment.apiURL}/${id}`);
   }
 
-  updateEmployee(id: number | undefined, employee: Employee): Observable<Object> {
+  updateEmployee(
+    id: number | undefined,
+    employee: Employee,
+  ): Observable<Object> {
     return this.httpClient.put(`${environment.apiURL}/${id}`, employee);
   }
 
-  deleteEmployee(id : number | undefined): Observable<Object> {
+  deleteEmployee(id: number | undefined): Observable<Object> {
     return this.httpClient.delete(`${environment.apiURL}/${id}`);
   }
 }

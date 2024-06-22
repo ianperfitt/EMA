@@ -34,12 +34,10 @@ import {
   provideClientHydration,
   provideProtractorTestingSupport,
   withHttpTransferCacheOptions,
-  withNoHttpTransferCache
+  withNoHttpTransferCache,
 } from "./chunk-UZF5QNGM.js";
 import "./chunk-2HEBDTGR.js";
-import {
-  getDOM
-} from "./chunk-MRUW4HX5.js";
+import { getDOM } from "./chunk-MRUW4HX5.js";
 import "./chunk-2QDPCBAK.js";
 export {
   BrowserModule,
@@ -78,6 +76,6 @@ export {
   KeyEventsPlugin as ɵKeyEventsPlugin,
   SharedStylesHost as ɵSharedStylesHost,
   getDOM as ɵgetDOM,
-  initDomAdapter as ɵinitDomAdapter
+  initDomAdapter as ɵinitDomAdapter,
 };
 //# sourceMappingURL=@angular_platform-browser.js.map
