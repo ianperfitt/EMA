@@ -1,13 +1,14 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # Compiled output
-/dist
+frontend/dist
 /tmp
 /out-tsc
 /bazel-out
 
 # Node
-/node_modules
+frontend/node_modules
+frontend/package-lock.json
 npm-debug.log
 yarn-error.log
 
@@ -29,7 +30,7 @@ yarn-error.log
 .history/*
 
 # Miscellaneous
-/.angular/cache
+frontend/.angular
 .sass-cache/
 /connect.lock
 /coverage
@@ -65,7 +66,6 @@ target/
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
-/dist/
 /nbdist/
 /.nb-gradle/
 build/
