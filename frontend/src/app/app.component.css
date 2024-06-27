@@ -1,0 +1,15 @@
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  margin-right: 15px;
+  margin-left: 15px;
+  min-height: 100vh;
+}
+
+main {
+  margin: auto;
+}
+
+nav {
+  margin-top: 10px;
+}
