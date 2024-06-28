@@ -1,23 +1,37 @@
 <div
-  class="relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
+  class="relative flex w-96 flex-col items-center rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
 >
+  <h4
+    class="text-blue-gray-900 block pt-3 font-sans text-2xl font-semibold leading-snug tracking-normal antialiased"
+  >
+    Employee Details
+  </h4>
   <nav
-    class="text-blue-gray-700 flex min-w-[240px] flex-col gap-1 p-2 font-sans text-base font-normal"
+    class="text-blue-gray-700 flex min-w-[240px] flex-col gap-1 p-2 font-sans text-base font-semibold"
   >
     <div
       class="hover:bg-blue-gray-50 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:text-blue-gray-900 active:bg-blue-gray-50 active:text-blue-gray-900 flex w-full items-center rounded-lg p-3 text-start leading-tight outline-none transition-all hover:bg-opacity-80 focus:bg-opacity-80 active:bg-opacity-80"
     >
-      First Name: {{ employee.firstName }}
+      First Name: &nbsp;
+      <span class="font-normal">
+        {{ employee.firstName }}
+      </span>
     </div>
     <div
       class="hover:bg-blue-gray-50 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:text-blue-gray-900 active:bg-blue-gray-50 active:text-blue-gray-900 flex w-full items-center rounded-lg p-3 text-start leading-tight outline-none transition-all hover:bg-opacity-80 focus:bg-opacity-80 active:bg-opacity-80"
     >
-      Last Name:{{ employee.lastName }}
+      Last Name: &nbsp;
+      <span class="font-normal">
+        {{ employee.lastName }}
+      </span>
     </div>
     <div
       class="hover:bg-blue-gray-50 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:text-blue-gray-900 active:bg-blue-gray-50 active:text-blue-gray-900 flex w-full items-center rounded-lg p-3 text-start leading-tight outline-none transition-all hover:bg-opacity-80 focus:bg-opacity-80 active:bg-opacity-80"
     >
-      Email Id: {{ employee.lastName }}
+      Email Id: &nbsp;
+      <span class="font-normal">
+        {{ employee.lastName }}
+      </span>
     </div>
   </nav>
 </div>
