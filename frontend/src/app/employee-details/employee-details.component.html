@@ -1,12 +1,23 @@
-<h3>View Employee Details</h3>
-<div>
-  <div>
-    <label> <b> First Name: </b></label> {{ employee.firstName }}
-  </div>
-  <div>
-    <label> <b> Last Name: </b></label> {{ employee.lastName }}
-  </div>
-  <div>
-    <label> <b> Email Id: </b></label> {{ employee.emailId }}
-  </div>
+<div
+  class="relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
+>
+  <nav
+    class="text-blue-gray-700 flex min-w-[240px] flex-col gap-1 p-2 font-sans text-base font-normal"
+  >
+    <div
+      class="hover:bg-blue-gray-50 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:text-blue-gray-900 active:bg-blue-gray-50 active:text-blue-gray-900 flex w-full items-center rounded-lg p-3 text-start leading-tight outline-none transition-all hover:bg-opacity-80 focus:bg-opacity-80 active:bg-opacity-80"
+    >
+      First Name: {{ employee.firstName }}
+    </div>
+    <div
+      class="hover:bg-blue-gray-50 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:text-blue-gray-900 active:bg-blue-gray-50 active:text-blue-gray-900 flex w-full items-center rounded-lg p-3 text-start leading-tight outline-none transition-all hover:bg-opacity-80 focus:bg-opacity-80 active:bg-opacity-80"
+    >
+      Last Name:{{ employee.lastName }}
+    </div>
+    <div
+      class="hover:bg-blue-gray-50 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:text-blue-gray-900 active:bg-blue-gray-50 active:text-blue-gray-900 flex w-full items-center rounded-lg p-3 text-start leading-tight outline-none transition-all hover:bg-opacity-80 focus:bg-opacity-80 active:bg-opacity-80"
+    >
+      Email Id: {{ employee.lastName }}
+    </div>
+  </nav>
 </div>
